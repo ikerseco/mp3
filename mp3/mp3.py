@@ -37,9 +37,20 @@ class grupoak_erakutsi(object):
    print("taldeak:")
    for x in range(luzehera):
     print(x,".",karpetak[x])
-   taldea = input("taldea:")
-   taldeaz = int(taldea)
-   self.url += ".\\music\\" + karpetak[taldeaz]
+  else:
+   karpetak = os.listdir(".\\music")
+   luzehera = len(karpetak)
+   karakter = len(self.balorea)
+   print("taldeak:")
+   for x in range(luzehera):
+    lotura = ""
+    for t in range(karakter):
+     lotura += karpetak[x][t]	
+    if lotura == self.balorea:
+     print(x,".",karpetak[x])
+  taldea = input("taldea:")
+  taldeaz = int(taldea)
+  self.url += ".\\music\\" + karpetak[taldeaz]
    
 class musica_exekutatu(grupoak_erakutsi):
  def __init__(self,url):
