@@ -63,11 +63,12 @@ class musica_exekutatu(grupoak_erakutsi):
   for x in range(luzehera):
    print(x,".",kantak[x])
   kanta = input("kanta aukeratu:")
-  kantaz = int(kanta)
-  self.url += "\\" + kantak[kantaz] 
-  
- def exekutatu(self):
-  os.startfile(self.url)
+  if kanta != "exit()":
+   kantaz = int(kanta)
+   self.url += "\\" + kantak[kantaz] 
+   os.startfile(self.url)
+  else:
+   self.url = ""
   
   
   
@@ -89,6 +90,5 @@ if cmd == "-mp3":
 if cmd == "-start":
  while True:
   mp3 = musica_exekutatu(info)
-  url = mp3.t_ikustatu() 
+  mp3.t_ikustatu() 
   mp3.k_ikustatu()
-  print(mp3.exekutatu())
